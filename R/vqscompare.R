@@ -8,7 +8,7 @@
 #' @param kmeans.n Number of clusters or operational taxonomic units (OTUs) needed from k-means clustering on multidimensional scale (MDS) of all samples' pairwise SNV distance.
 #' @param showhap.n Number of largest haplotypes (default = 30) labeled in the top five OTUs' MDS plot (optional).
 #'
-#' @return list of 1) "hapdiv": comparative table of viral quasispecies diversity metrics between listed samples calculated by QSutils package, 2) "otudiv": comparative table of OTU diversity metrics between listed samples calculated from consensus sequence of each OTU (similar to "otucompare" function's output), 3) "sumsnv_hap": frequency and SNV profile (by position in the alignment) of haplotypes that are not singleton (number of reads > 1), 4) "sumsnv_otu": frequency and SNV profile of all haplotypes grouped into different operational taxonomic unit (OTU), 5) "fullseq": complete read sequence of haplotypes that are not singleton, 6) "fulldata": complete read sequence of all haplotypes in every sample with frequency and OTU classification, 7) "summaryplot": visualization of viral quasispecies comparison between samples including 7.1) proportion of haplotypes (top left), 7.2) proportion of OTUs (bottom left), and 7.3) multidimensional scale (MDS) plots (right) of k-means OTU (5 largest groups with major haplotypes labeled and all groups)
+#' @return list of 1) "hapdiv": comparative table of viral quasispecies diversity metrics between listed samples calculated by QSutils package, 2) "otudiv": comparative table of OTU diversity metrics between listed samples calculated from consensus sequence of each OTU (similar to "otucompare" function's output), 3) "sumsnv_hap": frequency and SNV profile (by position in the alignment) of haplotypes that are not singleton (number of reads > 1), 4) "sumsnv_otu": frequency and SNV profile of all haplotypes grouped into different operational taxonomic unit (OTU), 5) "fullseq": complete read sequence of haplotypes that are not singleton, 6) "fulldata": complete read sequence of all haplotypes in every sample with frequency and OTU classification, 7) "summaryplot": visualization of viral quasispecies comparison between samples including 7.1) "happlot": proportion of haplotypes (top left), 7.2) "otuplot": proportion of OTUs (bottom left), and 7.3) multidimensional scale (MDS) plots (right) of k-means OTU ("top5otumds": 5 largest groups with major haplotypes labeled and "allotumds": all groups)
 #' @export
 #'
 #' @import RColorBrewer
@@ -210,6 +210,6 @@ vqscompare <- function(samplelist = list(BC1, BC2, BC3), lab_name = "sample name
     d.otudiversity <- rbind(d.otudiversity,d.otudiversity.i)
   }
 
-  list <- list("summaryplot" = allplot, "hapdiv" = d.hapdiversity, "otudiv" = d.otudiversity, "sumsnv_hap" = compsnv, "sumsnv_otu" = compsnv_otu, "fullseq" = data.frame(fullnt2[, c("hapgroup", "seq")]), "fulldata" = fullseq_hap_otu[,-1])
+  list <- list("summaryplot" = allplot, "happlot" = happrop, "otuplot" = otuprop, "top5otumds" = pmds2, "allotumds" = pmds, "hapdiv" = d.hapdiversity, "otudiv" = d.otudiversity, "sumsnv_hap" = compsnv, "sumsnv_otu" = compsnv_otu, "fullseq" = data.frame(fullnt2[, c("hapgroup", "seq")]), "fulldata" = fullseq_hap_otu[,-1])
   return(list)
 }
