@@ -27,16 +27,10 @@ list of 1) "dat": viral quasispecies diversity metrics calculated by QSutils pac
 Minimizes potential long-read sequencing error based on the specified cut-off percentage of low frequency nucleotide base and down-samples read for further comparison with other samples. The output of this function is a list of several objects representing diversity of each sample that must be used as an input for other functions such as "snvcompare" or "vqscompare".
 }
 \examples{
-## Locate input FASTA files-----------------------------------------------------------------------
-sample1filepath <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
-sample2filepath <- system.file("extdata", "sample2.fasta", package = "longreadvqs")
-sample3filepath <- system.file("extdata", "sample3.fasta", package = "longreadvqs")
+## Locate input FASTA file------------------------------------------------------------------------
+sample1filepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 
-## Prepare data for viral quasispecies comparison between three samples---------------------------
-sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 100, label = "sample1")
-sample2 <- vqsassess(sample2filepath, pct = 10, samsize = 100, label = "sample2")
-sample3 <- vqsassess(sample3filepath, pct = 10, samsize = 100, label = "sample3")
-
-## For more examples on other choices of arguments, please see "vqssub" function's examples-------
+## Prepare data for viral quasispecies comparison ------------------------------------------------
+sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 20, label = "sample1")
 
 }

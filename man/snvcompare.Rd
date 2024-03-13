@@ -16,16 +16,14 @@ Compares single nucleotide variant (SNV) profile between error-minimized down-sa
 }
 \examples{
 ## Locate input FASTA files-----------------------------------------------------------------------
-sample1filepath <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
-sample2filepath <- system.file("extdata", "sample2.fasta", package = "longreadvqs")
-sample3filepath <- system.file("extdata", "sample3.fasta", package = "longreadvqs")
+sample1filepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
+sample2filepath <- system.file("extdata", "s2.fasta", package = "longreadvqs")
 
 ## Prepare data for viral quasispecies comparison between three samples---------------------------
-sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 100, label = "sample1")
-sample2 <- vqsassess(sample2filepath, pct = 10, samsize = 100, label = "sample2")
-sample3 <- vqsassess(sample3filepath, pct = 10, samsize = 100, label = "sample3")
+sample1 <- vqsassess(sample1filepath, pct = 10, label = "sample1")
+sample2 <- vqsassess(sample2filepath, pct = 10, label = "sample2")
 
 ## Compare SNV profile between three listed samples-----------------------------------------------
-snvcompare(samplelist = list(sample1, sample2, sample3), ncol = 1)
+snvcompare(samplelist = list(sample1, sample2), ncol = 1)
 
 }

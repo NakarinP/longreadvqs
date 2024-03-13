@@ -13,19 +13,17 @@
 #'
 #' @examples
 #' ## Locate input FASTA files-----------------------------------------------------------------------
-#' sample1filepath <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
-#' sample2filepath <- system.file("extdata", "sample2.fasta", package = "longreadvqs")
-#' sample3filepath <- system.file("extdata", "sample3.fasta", package = "longreadvqs")
-#' sample4filepath <- system.file("extdata", "sample4.fasta", package = "longreadvqs")
+#' sample1filepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
+#' sample2filepath <- system.file("extdata", "s2.fasta", package = "longreadvqs")
+#' sample3filepath <- system.file("extdata", "s3.fasta", package = "longreadvqs")
 #'
-#' ## Prepare data for viral quasispecies comparison between four samples----------------------------
-#' sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 100, label = "sample1")
-#' sample2 <- vqsassess(sample2filepath, pct = 10, samsize = 100, label = "sample2")
-#' sample3 <- vqsassess(sample3filepath, pct = 10, samsize = 100, label = "sample3")
-#' sample4 <- vqsassess(sample4filepath, pct = 10, samsize = 100, label = "sample4")
+#' ## Prepare data for viral quasispecies comparison between three samples---------------------------
+#' sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 20, label = "sample1")
+#' sample2 <- vqsassess(sample2filepath, pct = 10, samsize = 20, label = "sample2")
+#' sample3 <- vqsassess(sample3filepath, pct = 10, samsize = 20, label = "sample3")
 #'
-#' ## Compare viral quasispecies and OTU (10 clusters) diversity between four samples----------------
-#' comp <- vqscompare(samplelist = list(sample1, sample2, sample3, sample4),
+#' ## Compare viral quasispecies and OTU (10 clusters) diversity between three samples---------------
+#' comp <- vqscompare(samplelist = list(sample1, sample2, sample3),
 #'                    lab_name = "Sample", kmeans.n = 10)
 #'
 #' ## Export Key outputs from "vqscompare" function--------------------------------------------------

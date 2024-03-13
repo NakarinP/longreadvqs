@@ -28,9 +28,9 @@ Finds an optimal cut-off percentage for error minimization (in vqssub, vqsassess
 }
 \examples{
 ## Locate input FASTA file-------------------------------------------------------------------------
-fastafilepath <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
+fastafilepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 
-## Find an cut-off percentage that creates singleton haplotypes less than 25\% of the alignment.----
-pctopt(fastafilepath, pctsing = 25, label = "sample1")
+## Find an cut-off percentage that creates singleton haplotypes less than 50\% of the alignment.----
+pctopt(fastafilepath, pctsing = 50, label = "s1")
 
 }

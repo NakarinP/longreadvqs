@@ -28,18 +28,12 @@ Minimizes potential long-read sequencing error based on the specified cut-off pe
 }
 \examples{
 ## Locate input FASTA file-------------------------------------------------------------------------
-fastafilepath <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
+fastafilepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 
 ## Summarize viral quasispecies diversity metrics--------------------------------------------------
 # From error-minimized unsampled reads (10\% cut-off):
 vqssub(fastafilepath, pct = 10, label = "sample1")
 # From error-minimized sampled reads (n = 100):
-vqssub(fastafilepath, pct = 10, samsize = 100, label = "sample1")
-# From error-minimized sampled reads with 50\% cut-off for gap:
-vqssub(fastafilepath, pct = 10, gappct = 50, samsize = 100, label = "sample1")
-# From error-minimized sampled reads but ignore positions with gap:
-vqssub(fastafilepath, pct = 10, ignoregappositions = TRUE, samsize = 100, label = "sample1")
-# From reads that were down-sampled before error minimization:
-vqssub(fastafilepath, pct = 10, samplingfirst = TRUE, samsize = 100, label = "sample1")
+vqssub(fastafilepath, pct = 10, samsize = 20, label = "sample1")
 
 }

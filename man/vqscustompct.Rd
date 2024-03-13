@@ -32,15 +32,14 @@ Minimizes potential long-read sequencing error based on the specified cut-off pe
 }
 \examples{
 ## Locate input FASTA file------------------------------------------------------------------------
-fastafilepath <- system.file("extdata", "bad3'end.fasta", package = "longreadvqs")
+fastafilepath <- system.file("extdata", "badend.fasta", package = "longreadvqs")
 
 ## Prepare data for viral quasispecies comparison using 10\% cut-off across all positions----------
-nocustom <- vqsassess(fastafilepath, pct = 10, samsize = 100, label = "nocustom")
+nocustom <- vqsassess(fastafilepath, pct = 10, label = "nocustom")
 
 ## Prepare data using 10\% cut-off for the first 971 positions and 30\% cut-off for the rest--------
 custom <- vqscustompct(fastafilepath, pct = 10,
-                       brkpos = c("1:971","972:982"), lspct = c(10,30),
-                       samsize = 100, label = "custom")
+                       brkpos = c("1:971","972:982"), lspct = c(10,30), label = "custom")
 
 ## Use "snvcompare" function to check whether SNV profile looks better or not---------------------
 snvcompare(samplelist = list(nocustom, custom), ncol = 1)
