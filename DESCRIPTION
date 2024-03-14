@@ -1,5 +1,5 @@
 Package: longreadvqs
-Title: Viral Quasispecies Comparison from Long-Read Sequencing
+Title: Viral Quasispecies Comparison from Long-Read Sequencing Data
 Version: 0.1.0
 Authors@R: (
     person("Nakarin", "Pamornchainavakul",
