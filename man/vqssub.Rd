@@ -33,7 +33,7 @@ fastafilepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 ## Summarize viral quasispecies diversity metrics--------------------------------------------------
 # From error-minimized unsampled reads (10\% cut-off):
 vqssub(fastafilepath, pct = 10, label = "sample1")
-# From error-minimized sampled reads (n = 100):
+# From error-minimized sampled reads (n = 20):
 vqssub(fastafilepath, pct = 10, samsize = 20, label = "sample1")
 
 }

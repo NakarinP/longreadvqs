@@ -18,11 +18,11 @@
 #' sample1filepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 #' sample2filepath <- system.file("extdata", "s2.fasta", package = "longreadvqs")
 #'
-#' ## Prepare data for viral quasispecies comparison between three samples---------------------------
+#' ## Prepare data for viral quasispecies comparison between two samples-----------------------------
 #' sample1 <- vqsassess(sample1filepath, pct = 10, label = "sample1")
 #' sample2 <- vqsassess(sample2filepath, pct = 10, label = "sample2")
 #'
-#' ## Compare SNV profile between three listed samples-----------------------------------------------
+#' ## Compare SNV profile between two listed samples-------------------------------------------------
 #' snvcompare(samplelist = list(sample1, sample2), ncol = 1)
 #'
 #' @name snvcompare
