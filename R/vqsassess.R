@@ -36,6 +36,8 @@
 #' ## Prepare data for viral quasispecies comparison ------------------------------------------------
 #' sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 20, label = "sample1")
 #'
+#' ## For more examples on other choices of arguments, please see "vqssub" function's examples-------
+#'
 #' @name vqsassess
 
 utils::globalVariables(c('newcol','aes','base','geom_bar','ggplot','ggtitle','group','percent','position','scale_fill_manual','value','ylab'))

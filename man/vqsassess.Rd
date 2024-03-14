@@ -33,4 +33,6 @@ sample1filepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 ## Prepare data for viral quasispecies comparison ------------------------------------------------
 sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 20, label = "sample1")
 
+## For more examples on other choices of arguments, please see "vqssub" function's examples-------
+
 }

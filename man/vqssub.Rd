@@ -35,5 +35,11 @@ fastafilepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 vqssub(fastafilepath, pct = 10, label = "sample1")
 # From error-minimized sampled reads (n = 20):
 vqssub(fastafilepath, pct = 10, samsize = 20, label = "sample1")
+# From error-minimized sampled reads with 50\% cut-off for gap:
+vqssub(fastafilepath, pct = 10, gappct = 50, samsize = 20, label = "sample1")
+# From error-minimized sampled reads but ignore positions with gap:
+vqssub(fastafilepath, pct = 10, ignoregappositions = TRUE, samsize = 20, label = "sample1")
+# From reads that were down-sampled before error minimization:
+vqssub(fastafilepath, pct = 10, samplingfirst = TRUE, samsize = 20, label = "sample1")
 
 }
