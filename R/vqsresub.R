@@ -35,7 +35,7 @@
 #' ## Summarize viral quasispecies diversity metrics from five downsampling iterations.---------------
 #' vqsresub(fastafilepath, iter = 5, pct = 10, samsize = 20, label = "sample1")
 #'
-#' @name vqssub
+#' @name vqsresub
 
 utils::globalVariables("newcol")
 
