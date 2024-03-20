@@ -44,7 +44,7 @@ ggplot(x, aes(x=pct, y=pctsingleton)) + geom_line() + geom_point()
 vqssub(sample1, pct = 10, label = "sample1")
 ```
 
-To compare VQS diversity across samples, it's important to standardize the read alignment depth. Since sequencing results can vary, we perform down-sampling after minimizing errors with the "vqssub" function. In our case, for sample1, sample2, and sample3 with original depths of 318, 324, and 665, respectively, we randomly down-sample them to a common depth of 300.
+To compare VQS diversity across samples, it's important to standardize the read alignment depth. Since sequencing results can vary, we perform down-sampling after minimizing errors with the "vqssub" function. In our case, for sample1, sample2, and sample3 with original depths of 311, 316, and 655, respectively, we randomly down-sample them to a common depth of 300.
 
 ```{r cmd1, warning=FALSE, message=FALSE}
 #Load samples 2 and 3.
@@ -63,22 +63,21 @@ rbind(a, b, c)
 We can also repeatedly down-sample the alignments and check the consistency of each VQS diversity metric at the different depths like the following example.
 
 ```{r cmd2, warning=FALSE, message=FALSE}
-#Randomly down-sample from depth of 665 to 300, and 100 (10 iterations for each sample size).
+#Randomly down-sample from depth of 655 to 300, and 100 (10 iterations for each sample size).
 set.seed(123)
 c_full <- vqssub(sample3, pct = 10, label = "full_depth") #non-sampled alignment
-c_300 <- do.call("rbind", replicate(10, vqssub(sample3, pct = 10, 
-         samsize = 300, label = "depth_300"), simplify = FALSE)) #down-sample to depth of 300
-c_100 <- do.call("rbind", replicate(10, vqssub(sample3, pct = 10, 
-         samsize = 100, label = "depth_100"), simplify = FALSE)) #down-sample to depth of 100
+c_300 <- vqsresub(sample3, iter = 10, pct = 10, 
+                  samsize = 300, label = "depth_300") #down-sample to depth of 300
+c_100 <- vqsresub(sample3, iter = 10, pct = 10,
+                  samsize = 100, label = "depth_100") #down-sample to depth of 100
 
 all_c <- rbind(c_full, c_300, c_100) #combine data
 
 #Load packages for visualization.
-library(ggplot2)
 library(cowplot)
 
 all_c$depth <- as.character(all_c$depth)
-depthorder <- c("665", "300", "100")
+depthorder <- c("655", "300", "100")
 
 #Plot box-plots of three VQS metrics variation through different sampling depths.
 haplotypes <- ggplot(all_c, aes(x = factor(depth, level=depthorder), y = haplotypes, 
