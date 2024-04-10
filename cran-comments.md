@@ -15,16 +15,15 @@
   - Comments from CRAN admin
   
   1. Package has a FOSS license but eventually depends on the following package which may restrict use: QSutils
-  
   2. Is there some reference about the method you can add in the Description
 field in the form Authors (year) <doi:10.....> or <arXiv:.....>?
-
   3. "Tool Kits for" in the title seems redundant, hence you may want to
 remove that.
 
-  - Responses
+  - Responses and edits
   
   1. QSutils package's license was updated to GPL-2 by its maintainer (https://code.bioconductor.org/browse/QSutils/blob/devel/DESCRIPTION).
   2. Comments 2. and 3. were fixed in the DESCRIPTION file.
+  3. "vqsresub" function was added.
 
   
