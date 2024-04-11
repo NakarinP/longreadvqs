@@ -26,8 +26,8 @@
 #' sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 20, label = "sample1")
 #' sample2 <- vqsassess(sample2filepath, pct = 10, samsize = 20, label = "sample2")
 #'
-#' ## Compare OTU (5 clusters) diversity metrics  between two samples--------------------------------
-#' otucompare(samplelist = list(sample1, sample2), kmeans.n = 5)
+#' ## Compare OTU (2 clusters) diversity metrics  between two samples--------------------------------
+#' otucompare(samplelist = list(sample1, sample2), kmeans.n = 2)
 #'
 
 otucompare <- function(samplelist = list(BC1, BC2, BC3), kmeans.n = 20){
@@ -54,7 +54,7 @@ otucompare <- function(samplelist = list(BC1, BC2, BC3), kmeans.n = 20){
   sumallsnv <- as.DNAbin(sumallsnv)
   distdnasnv <- dist.dna(sumallsnv, pairwise.deletion = FALSE, model = "raw")
   dist_sumallsnv <- as.dist(distdnasnv)
-  mds_sumallsnv <- cmdscale(dist_sumallsnv) %>% as_tibble()
+  mds_sumallsnv <- cmdscale(dist_sumallsnv) %>% as_tibble(.name_repair = 'unique')
   colnames(mds_sumallsnv) <- c("Dim.1", "Dim.2")
   clust <- kmeans(mds_sumallsnv, kmeans.n)$cluster %>% as.factor()
   mds_sumallsnv <- mds_sumallsnv %>% mutate(otu = clust)

@@ -75,7 +75,7 @@ vqscompare <- function(samplelist = list(BC1, BC2, BC3), lab_name = "sample name
   sumallsnv <- as.DNAbin(sumallsnv)
   distdnasnv <- dist.dna(sumallsnv, pairwise.deletion = FALSE, model = "raw")
   dist_sumallsnv <- as.dist(distdnasnv)
-  mds_sumallsnv <- suppressWarnings({cmdscale(dist_sumallsnv) %>% as_tibble()})
+  mds_sumallsnv <- suppressWarnings({cmdscale(dist_sumallsnv) %>% as_tibble(.name_repair = 'unique')})
   colnames(mds_sumallsnv) <- c("Dim.1", "Dim.2")
   clust <- kmeans(mds_sumallsnv, kmeans.n)$cluster %>% as.factor()
   mds_sumallsnv <- mds_sumallsnv %>% mutate(otu = clust)

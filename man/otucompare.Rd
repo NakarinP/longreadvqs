@@ -26,7 +26,7 @@ sample2filepath <- system.file("extdata", "s2.fasta", package = "longreadvqs")
 sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 20, label = "sample1")
 sample2 <- vqsassess(sample2filepath, pct = 10, samsize = 20, label = "sample2")
 
-## Compare OTU (5 clusters) diversity metrics  between two samples--------------------------------
-otucompare(samplelist = list(sample1, sample2), kmeans.n = 5)
+## Compare OTU (2 clusters) diversity metrics  between two samples--------------------------------
+otucompare(samplelist = list(sample1, sample2), kmeans.n = 2)
 
 }
