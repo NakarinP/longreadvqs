@@ -23,12 +23,13 @@ sample1filepath <- system.file("extdata", "s1.fasta", package = "longreadvqs")
 sample2filepath <- system.file("extdata", "s2.fasta", package = "longreadvqs")
 
 ## Prepare data for viral quasispecies comparison between two samples-----------------------------
-sample1 <- vqsassess(sample1filepath, pct = 10, samsize = 20, label = "sample1")
-sample2 <- vqsassess(sample2filepath, pct = 10, samsize = 20, label = "sample2")
+set.seed(123)
+sample1 <- vqsassess(sample1filepath, pct = 0, samsize = 50, label = "sample1")
+sample2 <- vqsassess(sample2filepath, pct = 0, samsize = 50, label = "sample2")
 
-## Compare viral quasispecies and OTU (5 clusters) diversity between two samples------------------
+## Compare viral quasispecies and OTU (2 clusters) diversity between two samples------------------
 comp <- vqscompare(samplelist = list(sample1, sample2),
-                   lab_name = "Sample", kmeans.n = 5)
+           lab_name = "Sample", kmeans.n = 2, showhap.n = 3)
 
 ## Export Key outputs from "vqscompare" function--------------------------------------------------
 notrun <- vqsout(comp, directory = tempdir())
