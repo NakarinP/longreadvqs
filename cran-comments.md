@@ -22,7 +22,7 @@ remove that.
 
   - Responses and edits
   
-  1. QSutils package's license was updated to GPL-2 by its maintainer (https://code.bioconductor.org/browse/QSutils/blob/devel/DESCRIPTION).
+  1. QSutils package's license was updated to GPL-2 by its maintainer (https://code.bioconductor.org/browse/QSutils/blob/devel/DESCRIPTION). "Remotes: git::https://github.com/VHIRHepatiques/QSutils" line was also added in the DESCRIPTION file.
   2. Comments 2. and 3. were fixed in the DESCRIPTION file.
   3. "vqsresub" function was added.
 
