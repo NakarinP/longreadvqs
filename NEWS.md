@@ -11,4 +11,13 @@ CHANGES IN VERSION 0.1.1
 	-----------------
 	  - Description file correction
 	    · Edit package description (add reference)
-	  - Add "vqsresub" function
+	  - "vqsresub" function added
+
+CHANGES IN VERSION 0.1.2
+==========================
+
+	Internal changes:
+	-----------------
+	  - Description file correction
+	    · Abbreviation explained
+	  - Unnecessary print() in all functions removed

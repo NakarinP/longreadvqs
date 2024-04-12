@@ -84,6 +84,6 @@ gapremove <- function(fasta, vgappct = 70, hgappct = 70, fastaname = "filteredfa
     close(fileConn)
   }
   writeFasta(finalfastdf, fastaname)
-  cat(" #Total positions: ",nrow(frqpc),"\n","#Remaining positions: ",ncol(newfast),"\n","Removed position(s): ",hivgap,"\n",
-      "#Total sequences: ",nrow(newfast),"\n","#Remaining sequences: ",nrow(finalfastdf),"\n","Removed sequence(s): ",row.names(newfast2)[which(newfast2$hgappc >= hgappct)])
+  message("#Total positions: ",nrow(frqpc),"\n","#Remaining positions: ",ncol(newfast),"\n","Removed position(s): ",paste(hivgap, collapse=", "),"\n",
+      "#Total sequences: ",nrow(newfast),"\n","#Remaining sequences: ",nrow(finalfastdf),"\n","Removed sequence(s): ",paste(shQuote(row.names(newfast2)[which(newfast2$hgappc >= hgappct)], type="cmd"), collapse=", "))
 }

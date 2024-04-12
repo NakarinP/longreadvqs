@@ -8,7 +8,7 @@
 #' @param method Sequencing error minimization methods that replace low frequency nucleotide base (less than the "pct" cut-off) with consensus base of that position ("conbase": default) or with base of the dominant haplotype ("domhapbase").
 #' @param pct Percent cut-off defining low frequency nucleotide base that will be replaced (must be specified).
 #' @param gappct The percent cut-off particularly specified for gap (-). If it is not specified or less than "pct", "gappct" will be equal to "pct" (default).
-#' @param ignoregappositions Replace all nucleotides in the positions in the alignment containing gap(s) with gap. This will make such positions no longer SNV. The default is "FALSE".
+#' @param ignoregappositions Replace all nucleotides in the positions in the alignment containing gap(s) with gap. This will make such positions no longer single nucleotide variant (SNV). The default is "FALSE".
 #' @param samsize Sample size (number of reads) after down-sampling. If it is not specified or more than number of reads in the original alignment, down-sampling will not be performed (default).
 #' @param label String within quotation marks indicating name of read alignment (optional).
 #'
@@ -104,7 +104,7 @@ vqsresub <- function(fasta, iter = 100, method= c("conbase", "domhapbase"), pct 
     frqpc <- as.data.frame(t(frqpc))
 
     if(missing(pct)){
-      stop("Please specify % cut-off for low SNV frequency (pct)")
+      stop("Please specify % cut-off for low frequency SNV (pct)")
     }else{
       lowfrq <- apply(frqpc, 1, function(x) paste(names(which(x[1:5] < pct & x[1:5] > 0)), collapse = ","))
     }
@@ -138,7 +138,7 @@ vqsresub <- function(fasta, iter = 100, method= c("conbase", "domhapbase"), pct 
     maxfrq$position <- as.integer(maxfrq$position)
     maxfrq$maxfrq = toupper(maxfrq$maxfrq)
     if(dim(lowfrq)[1] == 0){
-      print("No low frequency snv")
+      message("No low frequency SNV")
     }else{
       lowfrq <- merge(x = lowfrq, y =  maxfrq, by = "position", all.x = TRUE)
     }
@@ -148,7 +148,7 @@ vqsresub <- function(fasta, iter = 100, method= c("conbase", "domhapbase"), pct 
 
     for (i in 1:nrow(lowfrq)){
       if(dim(lowfrq)[1] == 0){
-        print("No low frequency snv")
+        message("No low frequency SNV")
       }else{
         dfseq[,lowfrq[i,1]][dfseq[,lowfrq[i,1]] == lowfrq[i,2]] <- lowfrq[i,3]
       }
@@ -183,7 +183,7 @@ vqsresub <- function(fasta, iter = 100, method= c("conbase", "domhapbase"), pct 
     frqpc <- as.data.frame(t(frqpc))
 
     if(missing(pct)){
-      stop("Please specify % cut-off for low SNV frequency (pct)")
+      stop("Please specify % cut-off for low frequency SNV (pct)")
     }else{
       lowfrq <- apply(frqpc, 1, function(x) paste(names(which(x[1:5] < pct & x[1:5] > 0)), collapse = ","))
     }
@@ -213,7 +213,7 @@ vqsresub <- function(fasta, iter = 100, method= c("conbase", "domhapbase"), pct 
     if(domhap$nr[1] == 1){
       stop("No dominant haplotype, please use conbase method instead")
     }else{
-      print(paste0("Dominant haplotype is ", format(round(domhap$nr[1]*100/sum(domhap$nr), 2), nsmall = 2), "% of total reads"))
+      message(paste0("Dominant haplotype is ", format(round(domhap$nr[1]*100/sum(domhap$nr), 2), nsmall = 2), "% of total reads"))
       domhap <- dss2df(domhap$hseqs)
     }
 
@@ -225,7 +225,7 @@ vqsresub <- function(fasta, iter = 100, method= c("conbase", "domhapbase"), pct 
     colnames(domhap) <- c("domhap", "position")
 
     if(dim(lowfrq)[1] == 0){
-      print("No low frequency snv")
+      message("No low frequency SNV")
     }else{
       lowfrq <- merge(x = lowfrq, y =  domhap, by = "position", all.x = TRUE)
     }
@@ -235,7 +235,7 @@ vqsresub <- function(fasta, iter = 100, method= c("conbase", "domhapbase"), pct 
 
     for (i in 1:nrow(lowfrq)){
       if(dim(lowfrq)[1] == 0){
-        print("No low frequency snv")
+        message("No low frequency SNV")
       }else{
         dfseq[,lowfrq[i,1]][dfseq[,lowfrq[i,1]] == lowfrq[i,2]] <- lowfrq[i,3]
       }

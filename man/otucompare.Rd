@@ -15,7 +15,7 @@ otucompare(samplelist = list(BC1, BC2, BC3), kmeans.n = 20)
 Comparative table of OTU diversity metrics between listed samples calculated from consensus sequence of each OTU by QSutils package
 }
 \description{
-Pools error-minimized down-sampled read samples and compares their diversity based on operational taxonomic unit (OTU) classified by k-means clustering of SNV distance. This function is a subset of "vqscompare" function.
+Pools error-minimized down-sampled read samples and compares their diversity based on operational taxonomic unit (OTU) classified by k-means clustering of single nucleotide variant (SNV) distance. This function is a subset of "vqscompare" function.
 }
 \examples{
 ## Locate input FASTA files-----------------------------------------------------------------------

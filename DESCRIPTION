@@ -2,7 +2,7 @@ Package: longreadvqs
 Title: Viral Quasispecies Comparison from Long-Read Sequencing Data
 Version: 0.1.1
 Authors@R: person("Nakarin", "Pamornchainavakul", email = "pamornakarin@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-0378-0316"))
-Description: Performs variety of viral quasispecies diversity analyses [see Domingo et al., 2016 <doi:10.1016/j.virol.2016.03.017>] based on long-read sequence alignment. Main functions include 1) sequencing error minimization and read sampling, 2) SNV profiles comparison, and 3) viral quasispecies profiles comparison and visualization. 
+Description: Performs variety of viral quasispecies diversity analyses [see Gregori et al. (2016) <doi:10.1016/j.virol.2016.03.017>] based on long-read sequence alignment. Main functions include 1) sequencing error minimization and read sampling, 2) Single nucleotide variant (SNV) profiles comparison, and 3) viral quasispecies profiles comparison and visualization. 
 License: GPL-3
 URL: https://github.com/NakarinP/longreadvqs
 BugReports: https://github.com/NakarinP/longreadvqs/issues

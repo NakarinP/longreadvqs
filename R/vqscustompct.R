@@ -10,7 +10,7 @@
 #' @param brkpos Ranges of nucleotide positions with different % cut-off specified in "lspct" for example c("1:50","51:1112") meaning that the first and the second ranges are nucleotide positions 1 to 50 and 51 to 1112, respectively.
 #' @param lspct List of customized % cut-off applied to nucleotide ranges set in "brkpos" for example c(15,8) meaning that 15% and 8% cut-offs will be applied to the first and the second ranges, respectively.
 #' @param gappct The percent cut-off particularly specified for gap (-). If it is not specified or less than "pct", "gappct" will be equal to "pct" (default).
-#' @param ignoregappositions Replace all nucleotides in the positions in the alignment containing gap(s) with gap. This will make such positions no longer SNV. The default is "FALSE".
+#' @param ignoregappositions Replace all nucleotides in the positions in the alignment containing gap(s) with gap. This will make such positions no longer single nucleotide variant (SNV). The default is "FALSE".
 #' @param samsize Sample size (number of reads) after down-sampling. If it is not specified or more than number of reads in the original alignment, down-sampling will not be performed (default).
 #' @param label String within quotation marks indicating name of read alignment (optional). Please don't use underscore (_) in the label.
 #'
@@ -112,7 +112,7 @@ vqscustompct <- function(fasta, method= c("conbase", "domhapbase"), samplingfirs
     if(missing(brkpos)){
       stop("Please specify a list of ranges of nucleotide positions (brkpos)")
     }else if(missing(lspct)){
-      stop("Please specify a list of different % cut-off for low SNV frequency (lspct)")
+      stop("Please specify a list of different % cut-off for low frequency SNV (lspct)")
     }else if(length(brkpos) != length(lspct)){
       stop("Please specify brkpos and lspct as lists with the same length")
     }else{
@@ -151,7 +151,7 @@ vqscustompct <- function(fasta, method= c("conbase", "domhapbase"), samplingfirs
     maxfrq$position <- as.integer(maxfrq$position)
     maxfrq$maxfrq = toupper(maxfrq$maxfrq)
     if(dim(lowfrq)[1] == 0){
-      print("No low frequency snv")
+      message("No low frequency SNV")
     }else{
       lowfrq <- merge(x = lowfrq, y =  maxfrq, by = "position", all.x = TRUE)
     }
@@ -161,7 +161,7 @@ vqscustompct <- function(fasta, method= c("conbase", "domhapbase"), samplingfirs
 
     for (i in 1:nrow(lowfrq)){
       if(dim(lowfrq)[1] == 0){
-        print("No low frequency snv")
+        message("No low frequency SNV")
       }else{
         dfseq[,lowfrq[i,1]][dfseq[,lowfrq[i,1]] == lowfrq[i,2]] <- lowfrq[i,3]
       }
@@ -306,7 +306,7 @@ vqscustompct <- function(fasta, method= c("conbase", "domhapbase"), samplingfirs
     if(missing(brkpos)){
       stop("Please specify a list of ranges of nucleotide positions (brkpos)")
     }else if(missing(lspct)){
-      stop("Please specify a list of different % cut-off for low SNV frequency (lspct)")
+      stop("Please specify a list of different % cut-off for low frequency SNV (lspct)")
     }else if(length(brkpos) != length(lspct)){
       stop("Please specify brkpos and lspct as lists with the same length")
     }else{
@@ -341,7 +341,7 @@ vqscustompct <- function(fasta, method= c("conbase", "domhapbase"), samplingfirs
     if(domhap$nr[1] == 1){
       stop("No dominant haplotype, please use conbase method instead")
     }else{
-      print(paste0("Dominant haplotype is ", format(round(domhap$nr[1]*100/sum(domhap$nr), 2), nsmall = 2), "% of total reads"))
+      message(paste0("Dominant haplotype is ", format(round(domhap$nr[1]*100/sum(domhap$nr), 2), nsmall = 2), "% of total reads"))
       domhap <- dss2df(domhap$hseqs)
     }
 
@@ -353,7 +353,7 @@ vqscustompct <- function(fasta, method= c("conbase", "domhapbase"), samplingfirs
     colnames(domhap) <- c("domhap", "position")
 
     if(dim(lowfrq)[1] == 0){
-      print("No low frequency snv")
+      message("No low frequency SNV")
     }else{
       lowfrq <- merge(x = lowfrq, y =  domhap, by = "position", all.x = TRUE)
     }
@@ -363,7 +363,7 @@ vqscustompct <- function(fasta, method= c("conbase", "domhapbase"), samplingfirs
 
     for (i in 1:nrow(lowfrq)){
       if(dim(lowfrq)[1] == 0){
-        print("No low frequency snv")
+        message("No low frequency SNV")
       }else{
         dfseq[,lowfrq[i,1]][dfseq[,lowfrq[i,1]] == lowfrq[i,2]] <- lowfrq[i,3]
       }

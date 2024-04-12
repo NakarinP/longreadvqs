@@ -1,7 +1,7 @@
 #' Comparing viral quasispecies profile and operational taxonomic unit (OTU) classified by k-means clustering between samples
 #'
 #' @description
-#' Pools error-minimized down-sampled read samples and compares their diversity by 1) viral quasispecies profile (haplotype and metrics from QSutils package), 2) operational taxonomic unit (OTU) classified by k-means clustering of SNV distance, and 3) visualization of different comparative method, i.e., haplotype, OTU, phylogenetic tree, MDS plot.
+#' Pools error-minimized down-sampled read samples and compares their diversity by 1) viral quasispecies profile (haplotype and metrics from QSutils package), 2) operational taxonomic unit (OTU) classified by k-means clustering of single nucleotide variant (SNV) distance, and 3) visualization of different comparative method, i.e., haplotype, OTU, phylogenetic tree, MDS plot.
 #'
 #' @param samplelist List of samples, i.e., name of resulting objects from "vqsassess" or "vqscustompct" functions, for example list(BC1, BC2, BC3).
 #' @param lab_name Name of variable or type of sample for instance "barcode", "sample", "dpi", or "isolate" (optional).

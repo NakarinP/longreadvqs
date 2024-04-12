@@ -14,7 +14,7 @@
 
 \item{gappct}{The percent cut-off particularly specified for gap (-). If it is not specified or less than "pct", "gappct" will be equal to "pct" (default).}
 
-\item{ignoregappositions}{Replace all nucleotides in the positions in the alignment containing gap(s) with gap. This will make such positions no longer SNV. The default is "FALSE".}
+\item{ignoregappositions}{Replace all nucleotides in the positions in the alignment containing gap(s) with gap. This will make such positions no longer single nucleotide variant (SNV). The default is "FALSE".}
 
 \item{samsize}{Sample size (number of reads) after down-sampling. If it is not specified or more than number of reads in the original alignment, down-sampling will not be performed (default).}
 
@@ -24,7 +24,7 @@
 An optimal cut-off percentage for error minimization of an input sample and parameter settings. If label is specified, the output will be a data frame with percentage of singleton haplotypes at each cut-off percentage from zero to the optimal cut-off percentage.
 }
 \description{
-Finds an optimal cut-off percentage for error minimization (in vqssub, vqsassess, vqscustompct functions) that can decrease the number of singleton haplotypes to less than the desired percentage of the total reads.
+Finds an optimal cut-off percentage for error minimization (in vqssub, vqsassess, and vqscustompct functions) that can decrease the number of singleton haplotypes to less than the desired percentage of the total reads.
 }
 \examples{
 ## Locate input FASTA file-------------------------------------------------------------------------

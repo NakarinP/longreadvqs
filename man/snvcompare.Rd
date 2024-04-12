@@ -2,7 +2,7 @@
 % Please edit documentation in R/snvcompare.R
 \name{snvcompare}
 \alias{snvcompare}
-\title{Plotting SNV frequency in read alignment across different samples}
+\title{Plotting single nucleotide variant (SNV) frequency in read alignment across different samples}
 \arguments{
 \item{samplelist}{List of samples, i.e., name of resulting objects from "vqsassess" or "vqscustompct" functions, for example list(BC1, BC2, BC3).}
 

@@ -48,5 +48,5 @@ filtfast <- function(fasta, qt = 0.25, fastaname = "filteredfast.fasta"){
   fastadf$sim <- sapply(fastadf$seq, function(x){stringdist::stringsim(x, consensus, method = "hamming")})
   fastafilt <- fastadf[fastadf$sim >= quantile(fastadf$sim, qt), ]
   writeFasta(fastafilt, fastaname)
-  cat(" #Total sequences: ",nrow(fastadf),"\n","#Remaining sequences: ",nrow(fastafilt),"\n", "Removed sequence(s): ",row.names(fastadf)[which(fastadf$sim < quantile(fastadf$sim, qt))])
+  message("#Total sequences: ",nrow(fastadf),"\n","#Remaining sequences: ",nrow(fastafilt),"\n", "Removed sequence(s): ",paste(shQuote(row.names(fastadf)[which(fastadf$sim < quantile(fastadf$sim, qt))], type="cmd"), collapse=", "))
 }

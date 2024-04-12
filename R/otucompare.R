@@ -1,7 +1,7 @@
 #' Comparing operational taxonomic unit (OTU) by k-means clustering between samples
 #'
 #' @description
-#' Pools error-minimized down-sampled read samples and compares their diversity based on operational taxonomic unit (OTU) classified by k-means clustering of SNV distance. This function is a subset of "vqscompare" function.
+#' Pools error-minimized down-sampled read samples and compares their diversity based on operational taxonomic unit (OTU) classified by k-means clustering of single nucleotide variant (SNV) distance. This function is a subset of "vqscompare" function.
 #'
 #' @param samplelist List of samples, i.e., name of resulting objects from "vqsassess" or "vqscustompct" functions, for example list(BC1, BC2, BC3).
 #' @param kmeans.n Number of clusters or operational taxonomic units (OTUs) needed from k-means clustering on multidimensional scale (MDS) of all samples' pairwise genetic distance.
