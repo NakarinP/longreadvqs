@@ -46,7 +46,7 @@ sample1 <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
 x <- pctopt(sample1, pctsing = 0, label = "sample1")
 ggplot(x, aes(x=pct, y=pctsingleton)) + geom_line() + geom_point()
 ```
-```{r cmd0, warning=FALSE, message=FALSE}
+```{r}
 #VQS diversity metrics of error minimized (10% cut-off) read alignment
 vqssub(sample1, pct = 10, label = "sample1")
 ```
