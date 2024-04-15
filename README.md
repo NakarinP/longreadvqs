@@ -13,7 +13,7 @@ Tool kits for Viral Quasispecies Comparison from Long-Read Sequencing performing
 install.packages("longreadvqs")
 ```
 
-If you have a problem installing 'QSutils' [Gregori et al. (2016) <doi:10.1016/j.virol.2016.03.017>], a key dependency of this package, please do the following.: 
+If you have a problem installing 'QSutils' (https://github.com/VHIRHepatiques/QSutils), a key dependency of this package, please do the following.: 
 
 ```{r, message=FALSE, warning=FALSE, results = "hide", eval=FALSE}
 library(devtools)
