@@ -50,6 +50,10 @@ ggplot(x, aes(x=pct, y=pctsingleton)) + geom_line() + geom_point()
 #VQS diversity metrics of error minimized (10% cut-off) read alignment
 vqssub(sample1, pct = 10, label = "sample1")
 ```
+<!-- ``` -->
+<!--    label   method  samplingwhen    pct fulldepth   depth   haplotypes  nsingleton  pctsingleton    polymorph   mutations   shannon norm_shannon    gini_simpson    FAD Mfe Pie Mfm Pim -->
+<!--    sample1 conbase after   10  311 311 47  17  5.466238    6   116 2.917347    0.7577235   0.8819625   6.475025    0.002580953 0.002994924 6.79E-09    0.001803544 -->
+<!-- ``` -->
 
 To compare VQS diversity across samples, it's important to standardize the read alignment depth. Since sequencing results can vary, we perform down-sampling after minimizing errors with the "vqssub" function. In our case, for sample1, sample2, and sample3 with original depths of 311, 316, and 655, respectively, we randomly down-sample them to a common depth of 300.
 
