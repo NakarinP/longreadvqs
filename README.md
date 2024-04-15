@@ -13,12 +13,12 @@ Tool kits for Viral Quasispecies Comparison from Long-Read Sequencing performing
 
 ## Installation
 
-'longreadvqs' is a package available on CRAN and can be installed easily in R.:
+'longreadvqs' is a package available on CRAN and can be installed easily in R:
 ```{r, eval=FALSE}
 install.packages("longreadvqs")
 ```
 
-If you have a problem installing [```QSutils```](https://github.com/VHIRHepatiques/QSutils), a key dependency of this package, please do the following.: 
+If you have a problem installing [```QSutils```](https://github.com/VHIRHepatiques/QSutils), a key dependency of this package, please do the following:
 
 ```{r, message=FALSE, warning=FALSE, results = "hide", eval=FALSE}
 library(devtools)
