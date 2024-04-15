@@ -63,7 +63,6 @@ minimization.
 
 ``` r
 library(longreadvqs)
-library(ggplot2)
 
 #Load sample 1.
 sample1 <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
@@ -71,6 +70,7 @@ sample1 <- system.file("extdata", "sample1.fasta", package = "longreadvqs")
 
 ``` r
 #Check which % cut-off could effectively minimize errors by assessing % singleton haplotypes.
+library(ggplot2)
 x <- pctopt(sample1, pctsing = 0, label = "sample1")
 ggplot(x, aes(x=pct, y=pctsingleton)) + geom_line() + geom_point()
 ```
