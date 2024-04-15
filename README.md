@@ -4,6 +4,10 @@
 
 [![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![](https://www.r-pkg.org/badges/version/longreadvqs?color=green)](https://cran.r-project.org/package=longreadvqs)
+[![r-universe status badge](https://longreadvqs.r-universe.dev/badges/longreadvqs)](https://longreadvqs.r-universe.dev/ui#package:longreadvqs)
+[![](https://img.shields.io/badge/devel%20version-0.1.2-blue.svg)](https://github.com/longreadvqs)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/longreadvqs?color=blue)](https://cran.r-project.org/package=longreadvqs)
+[![CRAN checks](https://badges.cranchecks.info/summary/longreadvqs.svg)](https://cran.r-project.org/web/checks/check_results_longreadvqs.html)
 
 Tool kits for Viral Quasispecies Comparison from Long-Read Sequencing performing variety of viral quasispecies diversity analyses based on long-read sequence alignment. Main functions include 1) sequencing error minimization and read sampling, 2) Single nucleotide variant (SNV) profiles comparison, and 3) viral quasispecies profiles comparison and visualization. 
 
