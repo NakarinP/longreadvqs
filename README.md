@@ -2,6 +2,7 @@
 
 <!-- badges: start -->
 
+[![R build status](https://github.com/NakarinP/longreadvqs.git/workflows/R-CMD-check/badge.svg)](https://github.com/NakarinP/longreadvqs.git/actions)
 [![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![](https://www.r-pkg.org/badges/version/longreadvqs?color=green)](https://cran.r-project.org/package=longreadvqs)
 [![](https://img.shields.io/badge/devel%20version-0.1.2-blue.svg)](https://github.com/longreadvqs)
