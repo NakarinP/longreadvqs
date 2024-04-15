@@ -1,7 +1,9 @@
 ---
 title: "Comparing viral quasispecies with longreadvqs"
 author: "Nakarin Pamornchainavakul, DVM, PhD"
-output: rmarkdown::html_vignette
+output:
+  github_document: default
+  html_document: default
 vignette: >
   %\VignetteIndexEntry{longreadvqs-vignette}
   %\VignetteEngine{knitr::rmarkdown}
