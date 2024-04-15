@@ -4,8 +4,6 @@
 
 [![license](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-[**Click here to see an example workflow using 'longreadvqs'**](https://github.com/NakarinP/longreadvqs/blob/main/man/figures/longreadvqs-vignette.pdf)
-
 Tool kits for Viral Quasispecies Comparison from Long-Read Sequencing performing variety of viral quasispecies diversity analyses based on long-read sequence alignment. Main functions include 1) sequencing error minimization and read sampling, 2) Single nucleotide variant (SNV) profiles comparison, and 3) viral quasispecies profiles comparison and visualization. 
 
 ## Installation
