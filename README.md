@@ -21,6 +21,7 @@ install.packages("longreadvqs")
 If you have a problem installing [```QSutils```](https://github.com/VHIRHepatiques/QSutils), a key dependency of this package, please do the following:
 
 ```{r, message=FALSE, warning=FALSE, results = "hide", eval=FALSE}
+install.packages("devtools")
 library(devtools)
 install_git("https://github.com/VHIRHepatiques/QSutils")
 ```
