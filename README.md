@@ -9,7 +9,7 @@
 [![Dependencies](https://tinyverse.netlify.com/badge/longreadvqs)](https://cran.r-project.org/package=longreadvqs)
 
 
-Tool kits for Viral Quasispecies Comparison from Long-Read Sequencing performing variety of viral quasispecies diversity analyses based on long-read sequence alignment. Main functions include 1) sequencing error minimization and read sampling, 2) Single nucleotide variant (SNV) profiles comparison, and 3) viral quasispecies profiles comparison and visualization. 
+Toolkit for Viral Quasispecies Comparison from Long-Read Sequencing performing variety of viral quasispecies diversity analyses based on long-read sequence alignment. Main functions include 1) sequencing error minimization and read sampling, 2) Single nucleotide variant (SNV) profiles comparison, and 3) viral quasispecies profiles comparison and visualization. 
 
 ## Installation
 
