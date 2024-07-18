@@ -278,3 +278,7 @@ other and from those in samples 1 and 2. Despite these distinctions, the
 MDS plots indicate that the genetic distances between all samples are
 not significantly far apart. This suggests that these diversities may
 not be adequately captured at the consensus gene level.
+
+## Citation
+
+https://dx.doi.org/10.21203/rs.3.rs-4637890/v1
