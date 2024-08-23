@@ -1,11 +1,11 @@
-#' Sequencing error minimization, read down-sampling, and data preparation for viral quasispecies comparison
+#' Sequencing error and noise minimization, read down-sampling, and data preparation for viral quasispecies comparison
 #'
 #' @description
-#' Minimizes potential long-read sequencing error based on the specified cut-off percentage of low frequency nucleotide base and down-samples read for further comparison with other samples. The output of this function is a list of several objects representing diversity of each sample that must be used as an input for other functions such as "snvcompare" or "vqscompare".
+#' Minimizes potential long-read sequencing error and noise based on the specified cut-off percentage of low frequency nucleotide base and down-samples read for further comparison with other samples. The output of this function is a list of several objects representing diversity of each sample that must be used as an input for other functions such as "snvcompare" or "vqscompare".
 #'
 #' @param fasta Input as a read alignment in FASTA format
-#' @param method Sequencing error minimization methods that replace low frequency nucleotide base (less than the "pct" cut-off) with consensus base of that position ("conbase": default) or with base of the dominant haplotype ("domhapbase").
-#' @param samplingfirst Downsampling before (TRUE) or after (FALSE: default) the error minimization.
+#' @param method Sequencing error and noise minimization methods that replace low frequency nucleotide base (less than the "pct" cut-off) with consensus base of that position ("conbase": default) or with base of the dominant haplotype ("domhapbase").
+#' @param samplingfirst Downsampling before (TRUE) or after (FALSE: default) the noise minimization.
 #' @param pct Percent cut-off defining low frequency nucleotide base that will be replaced (must be specified).
 #' @param gappct The percent cut-off particularly specified for gap (-). If it is not specified or less than "pct", "gappct" will be equal to "pct" (default).
 #' @param ignoregappositions Replace all nucleotides in the positions in the alignment containing gap(s) with gap. This will make such positions no longer single nucleotide variant (SNV). The default is "FALSE".

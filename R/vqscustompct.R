@@ -1,11 +1,11 @@
-#' Sequencing error minimization with customized % cut-off at particular nucleotide region, read down-sampling, and data preparation for viral quasispecies comparison
+#' Sequencing error and noise minimization with customized % cut-off at particular nucleotide region, read down-sampling, and data preparation for viral quasispecies comparison
 #'
 #' @description
-#' Minimizes potential long-read sequencing error based on the specified cut-off percentages of low frequency nucleotide base and down-samples read for further comparison with other samples. In this function, the cut-off percentage can be specifically adjusted for different ranges of nucleotide positions which is very useful when sequencing error heavily occurs in a particular part of reads. The output of this function is a list of several objects representing diversity of each sample that must be used as an input for other functions such as "snvcompare" or "vqscompare".
+#' Minimizes potential long-read sequencing error and noise based on the specified cut-off percentages of low frequency nucleotide base and down-samples read for further comparison with other samples. In this function, the cut-off percentage can be specifically adjusted for different ranges of nucleotide positions which is very useful when sequencing error heavily occurs in a particular part of reads. The output of this function is a list of several objects representing diversity of each sample that must be used as an input for other functions such as "snvcompare" or "vqscompare".
 #'
 #' @param fasta Input as a read alignment in FASTA format
-#' @param method Sequencing error minimization methods that replace low frequency nucleotide base (less than the "pct" cut-off) with consensus base of that position ("conbase": default) or with base of the dominant haplotype ("domhapbase").
-#' @param samplingfirst Downsampling before (TRUE) or after (FALSE: default) the error minimization.
+#' @param method Sequencing error and noise minimization methods that replace low frequency nucleotide base (less than the "pct" cut-off) with consensus base of that position ("conbase": default) or with base of the dominant haplotype ("domhapbase").
+#' @param samplingfirst Downsampling before (TRUE) or after (FALSE: default) the noise minimization.
 #' @param pct Percent cut-off defining low frequency nucleotide base that will be replaced (must be specified).
 #' @param brkpos Ranges of nucleotide positions with different % cut-off specified in "lspct" for example c("1:50","51:1112") meaning that the first and the second ranges are nucleotide positions 1 to 50 and 51 to 1112, respectively.
 #' @param lspct List of customized % cut-off applied to nucleotide ranges set in "brkpos" for example c(15,8) meaning that 15% and 8% cut-offs will be applied to the first and the second ranges, respectively.
