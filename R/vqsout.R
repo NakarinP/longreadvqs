@@ -28,6 +28,7 @@
 #' ## Export Key outputs from "vqscompare" function--------------------------------------------------
 #' notrun <- vqsout(comp, directory = tempdir())
 #'
+#' @name vqsout
 
 vqsout <- function(vqscompare.obj, directory = "path/to/directory"){
   if(missing(directory)) {

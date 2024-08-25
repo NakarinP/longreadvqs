@@ -2,12 +2,12 @@
 title: "Comparing viral quasispecies with longreadvqs"
 author: "Nakarin Pamornchainavakul, DVM, PhD"
 output:
-  github_document: default
   html_document: default
+  github_document: default
 vignette: >
   %\VignetteIndexEntry{longreadvqs-vignette}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 ```{r, include = FALSE}
@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 ## Individual sample preparation
 
-### Sequencing noise minimization and down-sampling
+### Sequencing error/noise minimization and down-sampling
 
 Sequencing errors create plenty of artificial single nucleotide variants (SNVs), leading to an overestimated number of singleton haplotypes (haplotype = group of identical reads, singleton haplotype = haplotype with only a single read). Our package aims to minimize potential sequencing errors and potential noises from rare mutations along long reads defined as SNV(s) or nucleotide base(s) with a frequency less than n % at each nucleotide position. Such problematic base(s) will be replaced with the consensus or majority base of that particular position.
 

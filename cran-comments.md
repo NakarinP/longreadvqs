@@ -77,3 +77,20 @@ remove that.
   <https://code.bioconductor.org/browse/QSutils/blob/devel/DESCRIPTION> for 
   clarification.******
   
+## longreadvqs VERSION 0.1.3
+  
+  - R CMD check results
+  
+  0 errors | 0 warnings | 0 note
+  
+  - Changes and updates
+  
+  1. An option to compare viral quasispecies at amino acid level was added to
+  "vqscompare" function ("proteincoding" and "removestopcodon" arguments).
+  
+  2. "AAcompare" function added to the package
+  
+  3. Documentations updated
+  
+  4. Reference in the DESCRIPTION file updated
+  

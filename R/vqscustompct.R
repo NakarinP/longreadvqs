@@ -14,7 +14,7 @@
 #' @param samsize Sample size (number of reads) after down-sampling. If it is not specified or more than number of reads in the original alignment, down-sampling will not be performed (default).
 #' @param label String within quotation marks indicating name of read alignment (optional). Please don't use underscore (_) in the label.
 #'
-#' @return list of 1) "dat": viral quasispecies diversity metrics calculated by QSutils package (similar to "vqssub" function's output), 2) "snvhap": SNV profile of each haplotype with frequency and new label for "vqscompare" function, 3) "snv": plot of SNV frequency for "snvcompare" function, 4) "hapre": DNAStringSet of read alignment of each haplotype for "vqscompare" function, 5) "lab": name of sample or read alignment
+#' @return List of 1) "dat": viral quasispecies diversity metrics calculated by QSutils package (similar to "vqssub" function's output), 2) "snvhap": SNV profile of each haplotype with frequency and new label for "vqscompare" function, 3) "snv": plot of SNV frequency for "snvcompare" function, 4) "hapre": DNAStringSet of read alignment of each haplotype for "vqscompare" function, 5) "lab": name of sample or read alignment
 #' @export
 #'
 #' @importFrom Biostrings readDNAStringSet
