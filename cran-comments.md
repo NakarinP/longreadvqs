@@ -94,3 +94,35 @@ remove that.
   
   4. Reference in the DESCRIPTION file updated
   
+  - Comments from CRAN team member
+  
+    Last released version's CRAN status: OK: 10, ERROR: 3
+    See: <https://CRAN.R-project.org/web/checks/check_results_longreadvqs.html>
+  
+    Possibly misspelled words in DESCRIPTION:
+    Pamornchainavakul (5:77)
+
+    Found the following (possibly) invalid URLs:
+      URL: https://github.com/longreadvqs
+        From: README.md
+        Status: 404
+        Message: Not Found
+        
+    Please fix and resubmit.
+    
+  - Responses and edits
+  
+  1. For three errors in the last released version's CRAN status, we did our 
+  best to fix this dependency issue since the submission of previous version 
+  (0.1.2) as we previously clarified in the previous version's comments (we 
+  communicated with the QSutils package's maintainers and they have already 
+  updated its license to GPL-2 in the DESCRIPTION. Please see 
+  <https://code.bioconductor.org/browse/QSutils/blob/devel/DESCRIPTION> for 
+  clarification.). We also added how to sparately install our problematic 
+  dependency, "QSutils", in our README.md in case users still have this problem.
+  
+  2. "Pamornchainavakul" was not misspelled. It is my last name.
+  
+  3. The github link in README.md has already been fixed to 
+  <https://github.com/NakarinP/longreadvqs">.
+

@@ -32,3 +32,4 @@ CHANGES IN VERSION 0.1.3
 	  - "AAcompare" function added to the package
 	  - Documentations updated
 	  - Reference in the DESCRIPTION file updated
+	  - Github link in README.md fixed
