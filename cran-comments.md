@@ -130,7 +130,7 @@ remove that.
   
   - R CMD check results
   
-  R CMD check succeeded
+  0 errors | 0 warnings | 0 note
   
   - Changes and updates
   
