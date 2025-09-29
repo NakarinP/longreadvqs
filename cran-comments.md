@@ -126,3 +126,16 @@ remove that.
   3. The github link in README.md has already been fixed to 
   <https://github.com/NakarinP/longreadvqs">.
 
+## longreadvqs VERSION 0.1.4
+  
+  - R CMD check results
+  
+  R CMD check succeeded
+  
+  - Changes and updates
+  
+  pairwiseAlignment() has moved from Biostrings to the pwalign package
+  
+  - Comments from CRAN team member
+  
+  The check problems with r-devel are from changing to BioC 3.22.
